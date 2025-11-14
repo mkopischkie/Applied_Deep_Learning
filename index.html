@@ -3,20 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
+    <title>PhotoPurge</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #f4f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
             text-align: center;
-            margin-top: 50px;
-            background-color: #f0f0f0;
         }
+
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
         h1 {
-            color: #333;
+            color: #222;
+            margin-bottom: 10px;
+            font-size: 2rem;
         }
+
         p {
             color: #555;
+            line-height: 1.6;
         }
+
         a {
             color: #1a73e8;
             text-decoration: none;
@@ -24,29 +51,37 @@
     </style>
 </head>
 
-<img src="iphoneimageoptimizericon.png" alt="PhotoPurge Icon" width="100" height ="100">
-
 <body>
-    <h1>Welcome to PhotoPurge!</h1>
-    <p>This is an iPhone Storage Optimizer, that works with you to find photos to delete from your mobile device to avoid those pesky Out of Storage messages.</p>
-    <p>Talk to the chatbot to start freeing up storage today! </p>
+    <div class="container">
+        <img src="iphoneimageoptimizericon.png" alt="PhotoPurge Icon">
 
-
+        <h1>Welcome to PhotoPurge!</h1>
+        <p>
+            This is an iPhone Storage Optimizer that works with you to find 
+            photos to delete from your mobile device and avoid those pesky 
+            “Out of Storage” messages.
+        </p>
+        <p>Talk to the chatbot to start freeing up storage today!</p>
+    </div>
 
     <!-- Watson Assistant Chat Script -->
     <script>
       window.watsonAssistantChatOptions = {
-        integrationID: "49a96873-2470-48e4-b461-c6be68ad2590", // The ID of this integration.
-        region: "us-south", // The region your integration is hosted in.
-        serviceInstanceID: "c13918df-b7bb-4f20-a8fa-4d499e1f2bcc", // The ID of your service instance.
+        integrationID: "614906cb-7811-4a94-827b-b99b34d22bcd",
+        region: "us-south",
+        serviceInstanceID: "c13918df-b7bb-4f20-a8fa-4d499e1f2bcc",
         onLoad: async (instance) => { await instance.render(); }
       };
       setTimeout(function(){
-        const t=document.createElement('script');
-        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" 
+                + (window.watsonAssistantChatOptions.clientVersion || 'latest') 
+                + "/WatsonAssistantChatEntry.js";
         document.head.appendChild(t);
       });
     </script>
 </body>
 </html>
+
+
 
