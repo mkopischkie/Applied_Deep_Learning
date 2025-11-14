@@ -9,9 +9,9 @@
         body {
             font-family: Arial, sans-serif;
 
-            /* Dark orange background */
-            background: #CC5500; /* Burnt orange / dark orange */
-            
+            /* Dark grey background */
+            background: #1e1e1e;
+
             margin: 0;
             padding: 0;
             display: flex;
@@ -37,7 +37,7 @@
         }
 
         h1 {
-            color: #222;
+            color: #CC5500; /* Dark orange heading */
             margin-bottom: 10px;
             font-size: 2rem;
         }
@@ -66,36 +66,22 @@
         </p>
         <p>Talk to the chatbot to start freeing up storage today!</p>
     </div>
-  <!-- Watson Assistant Chat Script -->
-<script>
-window.watsonAssistantChatOptions = {
-  integrationID: "614906cb-7811-4a94-827b-b99b34d22bcd",
-  region: "us-south",
-  serviceInstanceID: "c13918df-b7bb-4f20-a8fa-4d499e1f2bcc",
 
-  // ⭐ Add custom theme colors here
-  theme: {
-    palette: {
-      // Chat bubble color (bot)
-      primary: { 
-        main: "#CC5500"      // dark orange 
-      },
-      // User bubble color
-      secondary: {
-        main: "#333333"
-      }
-    }
-  },
-
-  onLoad: async (instance) => { await instance.render(); }
-};
-
-setTimeout(function(){
-  const t = document.createElement('script');
-  t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" 
-          + (window.watsonAssistantChatOptions.clientVersion || 'latest') 
-          + "/WatsonAssistantChatEntry.js";
-  document.head.appendChild(t);
-});
-</script>
-
+    <!-- Watson Assistant Chat Script -->
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "614906cb-7811-4a94-827b-b99b34d22bcd",
+        region: "us-south",
+        serviceInstanceID: "c13918df-b7bb-4f20-a8fa-4d499e1f2bcc",
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" 
+                + (window.watsonAssistantChatOptions.clientVersion || 'latest') 
+                + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>
